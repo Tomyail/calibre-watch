@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "dotenv": "^16.0.1",
+    "lodash": "^4.17.21"
+  },
+  "name": "calibre-watch",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Leo sun <tomyail1989@gmail.com>",
+  "license": "MIT",
+	"description":"add book to calibre automatically"
+}

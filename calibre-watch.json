@@ -1,0 +1,14 @@
+{
+  "name": "watchman",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "lodash": "^4.17.21",
+    "zx": "^7.0.4"
+  },
+	"scripts":{
+		"start":"node src/index.mjs"
+	}
+}

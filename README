@@ -1,0 +1,17 @@
+# Calibre-watch
+
+watching a dir, when some file added, run calibredb to add book to calibre
+
+## why
+
+I have a mac server running at home, calibre-web is running on it.
+I usually download book at company and sync it to my mac server using SynologyDrive.
+I Want my mac can automatically add book when SynologyDrive have new book received.
+
+
+## how
+
+* using `chokidar` for file watching
+* using `launchd` to keep this tool always running.
+
+
