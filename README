@@ -1,17 +1,34 @@
 # Calibre-watch
 
-watching a dir, when some file added, run calibredb to add book to calibre
+监听指定的文件夹,当里面有新增的文件时,调用 calibredb 把合法的书本加到 calibre 的数据库
 
-## why
+## 解决什么问题?
 
-I have a mac server running at home, calibre-web is running on it.
-I usually download book at company and sync it to my mac server using SynologyDrive.
-I Want my mac can automatically add book when SynologyDrive have new book received.
+* 家里有台 macmini, 作为服务器运行着 calibre-server, 其他设备通过它来获取自己想看的书本.
+* 当在外面(公司)收集到想看的电子书时,如何方便的把它传到自己的 calibre-server 上面 ?
 
 
-## how
+## 解决方案
 
-* using `chokidar` for file watching
-* using `launchd` to keep this tool always running.
+1. 所有设备上装了云盘,通过云盘同步电子书
+2. 家里的 mac server 发现有新的电子书通过云盘同步过来后, 调用 [calibredb](https://manual.calibre-ebook.com/generated/en/calibredb.html#add) 把它们加到数据库里面
+
+
+## 技术实现
+
+* 通过 chokidar 监听文件变化,并执行命令
+* 通过 launchd 将此脚本注册为服务,确保它在 mac server 上一直运行
+
+
+## 如何使用
+
+1. 下载项目并安装依赖(yarn)
+2. 复制 `.env.sample` 到 `.env` , 改成自己需要监听的文件夹路径
+3. 通过 `node index.mjs` 确认下本地运行正常
+4. 注册 mac 服务(https://www.jianshu.com/p/d6f09bc4142e)
+	1. 修改calibre-watch.sample.plist 到 	~/Library/LaunchAgent, 修改里面的 `node-path`(通过which node获得) 和 `project-path`
+	2. `launchctl load -w calibre-watch.sample.plist` // 注册并自动启动服务
+	3. `launchctl list | grep calibre-watch` //检查启动是否正常
+
 
 

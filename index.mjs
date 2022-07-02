@@ -1,3 +1,4 @@
+import 'zx/globals'
 import chokidar from 'chokidar';
 import lodash from 'lodash';
 import 'dotenv/config';
@@ -13,8 +14,9 @@ if(!calibre){
 	throw new Error('no calibredb_path found')
 }
 // 加个节流，防止calibredb 同时运行多个实例报错
-const def = debounce(async (path) => {
-  await $`${calibre} add ${path}`;
+const def = debounce(async (_path) => {
+  // await $`${calibre} add ${path}`;
+  await $`${calibre} add -m ignore ${sourceDir}`;
 }, 2000);
 
 chokidar
