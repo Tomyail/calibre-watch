@@ -16,5 +16,5 @@
   "main": "index.js",
   "author": "Leo sun <tomyail1989@gmail.com>",
   "license": "MIT",
-  "description": "add book to calibre automatically",
+  "description": "add book to calibre automatically"
 }
