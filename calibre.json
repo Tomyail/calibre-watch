@@ -1,9 +1,0 @@
-{
-  "verbose": true,
-  "watch": [
-    "~/SynologyDrive/book/",
-    "./calibre.json",
-    "./calibe.js"
-  ],
-  "ext": "pdf,epub,mobi"
-}
