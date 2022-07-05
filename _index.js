@@ -2,6 +2,7 @@ const taskName = process.argv[2];
 if (!taskName) {
   throw new Error(`empty taskName`);
 }
+console.log(`taskName ${taskName}`,process.argv)
 const { cosmiconfig } = require('cosmiconfig');
 const explorer = cosmiconfig('nodemon');
 const path = require('path');
@@ -11,7 +12,9 @@ explorer
     console.log('success', result);
     const nodemon = require('nodemon');
     nodemon({
-      ...result.config
+      ...result.config,
+      args:[taskName],
+      // nodeArgs:process.argv,
     });
 
     nodemon

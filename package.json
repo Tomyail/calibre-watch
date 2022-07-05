@@ -9,7 +9,8 @@
     "zx": "^7.0.6"
   },
   "scripts": {
-    "calibre": "node index.js calibre"
+    "calibre": "nodemon --config ./tasks/calibre/package.json ./tasks/calibre/index.js",
+    "logseq": "nodemon --config ./tasks/logseq/nodemon.json ./tasks/logseq/index.js"
   },
   "name": "calibre-watch",
   "version": "1.0.0",

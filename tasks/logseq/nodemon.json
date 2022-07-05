@@ -1,0 +1,12 @@
+{
+  "verbose": true,
+  "watch": [
+    "~/Library/Mobile Documents/iCloud~com~logseq~logseq/Documents/draws/",
+    "~/Library/Mobile Documents/iCloud~com~logseq~logseq/Documents/pages/",
+    "~/Library/Mobile Documents/iCloud~com~logseq~logseq/Documents/assets/",
+    "~/Library/Mobile Documents/iCloud~com~logseq~logseq/Documents/journals/",
+    "./nodemon.json",
+    "./index.js"
+  ],
+  "ext": "*"
+}
